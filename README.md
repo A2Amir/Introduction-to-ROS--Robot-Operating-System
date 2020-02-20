@@ -56,7 +56,7 @@ It's important to note that each node may simultaneously publish and subscribe t
 
 # 4. Message Passing Types
 
-Each ROS distribution comes with a wide variety of predefined message types which are available for your use. There are message types for communicating physical quantities, such as positions, velocities, accelerations, rotations and durations. There are also messages for communicating sensor readings such as laser scans, images, point clouds, inertial measurements, and more.
+Each ROS distribution comes with a wide variety of predefined message types which are available for your use. There are message types for communicating physical quantities, such as positions, velocities, accelerations, rotations and durations. There are also messages for communicating sensor readings such as laser scans, images, point clouds, inertial measurements and more.
 
 The number of message types available in a full ROS install is actually quite staggering and you can to define your own type.
 It's important to note that although the named messages would seem to imply text based contents, they can in fact contain any kind of data. Below is an example of the message types associated with the topics we looked at earlier.
@@ -69,5 +69,14 @@ In the above case, the topic called camera_images is transporting image messages
 
 # 5. Services
 
+Passing messages over topics between publishers and subscribers is useful but it's not a one size fits all communications solution. There are times when a request response pattern is useful. For these types of interactions, ROS provides what are called services.
+Like topics, services allow the passing of messages between nodes. However, unlike topics, a service is not a bus and there are no publishers or subscribers associated with them. Instead, nodes interacting via services do on a one to one basis (1-1) using a request and response messages.
 
+Let's take a look at how a service might be used in an example. Let's say that the behavior executor node wants to capture an image from the camera. We could just have it subscribe to the camera images topic. It would then receive a new image each time the camera node publishes one (See below).
+
+
+<p align="right">
+<img src="./img/8.png" alt="Services" width="600" height="200" />
+<p align="right">
+  
 </p>

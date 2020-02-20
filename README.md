@@ -22,15 +22,15 @@ Lots of people and lots of companies use ROS. There are drones, kinematic arms, 
 
 Pretty much all the robots share the same basic characteristics of containing sensors for perceiving the world around them, software for making high level decisions and motors and controllers for actuation. ROS provides a powerful communications system allowing these different components (perception, decision making and actuation components) to communicate with one another by considering a generic robot. This robot could be a drone, a mobile base or even a robotic arm. While these robots may be composed of very different physical components, they are all built to perform these same three high level steps of perception, decision making and actuation.
 
-<p align="center">
-<img src="./img/3.png" alt="Nodes and Topics" />
-<p align="center">
+<p align="right">
+<img src="./img/3.png" alt="Nodes and Topics" width="600" height="400"/>
+<p align="right">
   
 On the software side, ROS manages these three complex steps by breaking each of them down into many small unit processes called nodes. Typically, each node on the system is responsible for one small and relatively specific portion of the robot's overall functionality.
 
-<p align="center">
-<img src="./img/4.png" alt="Nodes and Topics" />
-<p align="center">
+<p align="right">
+<img src="./img/4.png" alt="Nodes and Topics" width="600" height="400" />
+<p align="right">
   
 For example, there may be nodes for each sensor and actuator in the system as well as nodes for things like position estimation, behavior execution and motor control (See above).
 
@@ -39,18 +39,18 @@ At the center of the collection of nodes is the ROS Master, which acts as a sort
 Note: The ROS master allows nodes to locate one another but after that they connect with each other directly.
 In addition to allowing nodes to locate one another and communicate, the ROS Master also hosts what has called the parameter server. As its name suggests, the parameter server is typically used to store parameters and configuration values that are shared amongst the running nodes. For example, a mobile robot's wheel radius may be used by one node to estimate position and by another to calculate speed and rather than storing the same information in multiple places, nodes can look up values as needed(See below).
 
-<p align="center">
-<img src="./img/5.png" alt="Nodes and Topics" />
-<p align="center">
+<p align="right">
+<img src="./img/5.png" alt="Nodes and Topics" width="600" height="400"/>
+<p align="right">
  
 Nodes can share data with one another by passing messages over what are called topics. A topic is simply a named bus which you can think of as a pipe between nodes through which messages flow. 
 
 In order to send a message on a topic, we say that a node must publish to it. Likewise, to receive a message on a topic, a node must subscribe to it. Below is an example of the topics called publish subscribe or a pub sub architecture (the arrows represent message flow from publishers to subscribers).
 
 
-<p align="center">
-<img src="./img/6.png" alt="Nodes and Topics" />
-<p align="center">
+<p align="right">
+<img src="./img/6.png" alt="Nodes and Topics" width="600" height="400"/>
+<p align="right">
 
 It's important to note that each node may simultaneously publish and subscribe to a wide variety of topics.
 

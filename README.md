@@ -200,7 +200,7 @@ To get a list of all nodes that are active and have been registered with the ROS
 
 
 <p align="right">
-<img src="./img/16.png" alt=" List All Active Nodes" width="600" height="200" />
+<img src="./img/17.png" alt=" List All Active Nodes" width="600" height="200" />
 <p align="right">
 
 We can see that there are three active nodes that have been registered with the ROS Master, /rosout, /teleop_turtle, and /turtlesim.
@@ -213,7 +213,7 @@ We can see that there are three active nodes that have been registered with the 
 In a similar fashion, we are able to query the ROS Master for a list of all topics. To do so, we use the command **rostopic list**.
 
 <p align="right">
-<img src="./img/17.png" alt=" List List Topics" width="600" height="200" />
+<img src="./img/18.png" alt=" List List Topics" width="600" height="200" />
 <p align="right">
   
 * /rosout_agg Aggregated feed of messages published to /rosout.
@@ -226,8 +226,38 @@ In a similar fashion, we are able to query the ROS Master for a list of all topi
 If we wish to get information about a specific topic, who is publishing to it, subscribed to it, or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
 
 <p align="right">
-<img src="./img/18.png" alt=" Get Information About a Specific Topic" width="600" height="300" />
+<img src="./img/19.png" alt=" Get Information About a Specific Topic" width="600" height="300" />
 <p align="right">
   
  As would be expected, there are two nodes registered on this topic. Our publisher, the teleop_turtle node, and our subscriber, the turtlesim node. Additionally, we can see that the type of message used on this topic is **geometry_msgs/Twist**.
+
+
+# 15. Show Message Information
+
+Let’s get some more information about the **geometry_msgs/Twist** message on the **/turtle1/cmd_vel** topic, to do so, we will use the **rosmsg info** command.
+
+<p align="right">
+<img src="./img/20.png" alt=" Turtlesim Commands: Show Message Information" width="600" height="300" />
+<p align="right">
+
+We can see that a Twist message consists nothing more than two Vector3 messages. One for linear velocity, and another for angular velocities, with each velocity component being represented by a float64.
+
+Note: Sometimes, the message definition won’t provide an ample amount of detail about a message type. For example, in the example above, how can we be sure that linear and angular vectors above refer to velocities, and not positions? One way to get more detail would be to look at the comments in the message’s definition file. To do so, we can issue the following command: **rosed geometry_msgs Twist.msg**
+
+Note 2: More information about rosed, including how to select which editor is used by default can be found [here](http://wiki.ros.org/ROS/Tutorials/UsingRosEd).
+
+# 16. Echo Messages on a Topic
+
+Sometimes it may be useful to look at a topic’s published messages in real time. To do so, we can use the command **rostopic echo**. Let’s take a look at the **/turtle1/cmd_vel** topic.
+
+      rostopic echo /turtle1/cmd_vel
+      
+If we then command the turtle to move from the turtle_teleop_key window, we will be able to see the output message in real-time.
+
+<p align="right">
+<img src="./img/21.png" alt=" Echo Messages on a Topic" width="600" height="250" />
+<p align="right">
+  
+ In the next lesson, we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
+  
 </p>

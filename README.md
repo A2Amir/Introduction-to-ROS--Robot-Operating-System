@@ -217,20 +217,20 @@ In a similar fashion, we are able to query the ROS Master for a list of all topi
 <img src="./img/18.png" alt=" List List Topics" width="600" height="200" />
 <p align="right">
   
-* /rosout_agg Aggregated feed of messages published to /rosout.
-* /turtle1/cmd_vel Topic upon which velocity commands are sent/received. Publishing a velocity message to this topic will command turtle1 to move.
-* /turtle1/color_sensor Each turtle in turtlesim is equipped with a color sensor, and readings from the sensor are published to this topic.
-* /turtle1/pose The position and orientation of turtle1 are published to this topic.
+* /rosout_agg: Aggregated feed of messages published to /rosout.
+* /turtle1/cmd_vel: Topic upon which velocity commands are sent/received. Publishing a velocity message to this topic will command turtle1 to move.
+* /turtle1/color_sensor: Each turtle in turtlesim is equipped with a color sensor and readings from the sensor are published to this topic.
+* /turtle1/pose: The position and orientation of turtle1 are published to this topic.
 
 # 14. Get Information About a Specific Topic
 
-If we wish to get information about a specific topic, who is publishing to it, subscribed to it, or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
+If we wish to get information about a specific topic, who is publishing to it, subscribed to it or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
 
 <p align="right">
 <img src="./img/19.png" alt=" Get Information About a Specific Topic" width="600" height="300" />
 <p align="right">
   
- As would be expected, there are two nodes registered on this topic. Our publisher, the teleop_turtle node, and our subscriber, the turtlesim node. Additionally, we can see that the type of message used on this topic is **geometry_msgs/Twist**.
+ As would be expected, there are two nodes registered on this topic. Our publisher the teleop_turtle node, and our subscriber the turtlesim node. Additionally, we can see that the type of message used on this topic is **geometry_msgs/Twist**.
 
 
 # 15. Show Message Information
@@ -241,9 +241,9 @@ Let’s get some more information about the **geometry_msgs/Twist** message on t
 <img src="./img/20.png" alt=" Turtlesim Commands: Show Message Information" width="600" height="300" />
 <p align="right">
 
-We can see that a Twist message consists nothing more than two Vector3 messages. One for linear velocity, and another for angular velocities, with each velocity component being represented by a float64.
+We can see that a Twist message consists nothing more than two Vector3 messages. One for linear velocity and another for angular velocities with each velocity component being represented by a float64.
 
-Note: Sometimes, the message definition won’t provide an ample amount of detail about a message type. For example, in the example above, how can we be sure that linear and angular vectors above refer to velocities, and not positions? One way to get more detail would be to look at the comments in the message’s definition file. To do so, we can issue the following command: **rosed geometry_msgs Twist.msg**
+Note: Sometimes, the message definition won’t provide an ample amount of detail about a message type. For example, in the example above, how can we be sure that linear and angular vectors above refer to velocities and not positions? One way to get more detail would be to look at the comments in the message’s definition file. To do so, we can issue the following command: **rosed geometry_msgs Twist.msg**
 
 Note 2: More information about rosed, including how to select which editor is used by default can be found [here](http://wiki.ros.org/ROS/Tutorials/UsingRosEd).
 
@@ -259,6 +259,6 @@ If we then command the turtle to move from the turtle_teleop_key window, we will
 <img src="./img/21.png" alt=" Echo Messages on a Topic" width="600" height="250" />
 <p align="right">
   
- In [the next lesson](), we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
+In [the next lesson](), we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
   
 </p>

@@ -198,4 +198,36 @@ Note: Tab completion is your friend. Each ROS distribution comes with a staggeri
 
 To get a list of all nodes that are active and have been registered with the ROS Master, we can use the command **rosnode list** in a new terminal . Let’s do so now:
 
+
+<p align="right">
+<img src="./img/16.png" alt=" List All Active Nodes" width="600" height="200" />
+<p align="right">
+
+We can see that there are three active nodes that have been registered with the ROS Master, /rosout, /teleop_turtle, and /turtlesim.
+* /rosout This node is launched by roscore. It subscribes to the standard /rosout topic, the topic to which all nodes send log messages.
+* /teleop_turtle This is our keyboard teleop node. Notice that it’s not named turtle_teleop_key. There’s no requirement that a node’s broadcasted name is the same as the name of it’s associated executable.
+
+* /turtlesim The node name associated with the turtlebot_sim node
+
+# 13. List Topics
+In a similar fashion, we are able to query the ROS Master for a list of all topics. To do so, we use the command **rostopic list**.
+
+<p align="right">
+<img src="./img/17.png" alt=" List List Topics" width="600" height="200" />
+<p align="right">
+  
+* /rosout_agg Aggregated feed of messages published to /rosout.
+* /turtle1/cmd_vel Topic upon which velocity commands are sent/received. Publishing a velocity message to this topic will command turtle1 to move.
+* /turtle1/color_sensor Each turtle in turtlesim is equipped with a color sensor, and readings from the sensor are published to this topic.
+* /turtle1/pose The position and orientation of turtle1 are published to this topic.
+
+# 14. Get Information About a Specific Topic
+
+If we wish to get information about a specific topic, who is publishing to it, subscribed to it, or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
+
+<p align="right">
+<img src="./img/18.png" alt=" Get Information About a Specific Topic" width="600" height="300" />
+<p align="right">
+  
+ As would be expected, there are two nodes registered on this topic. Our publisher, the teleop_turtle node, and our subscriber, the turtlesim node. Additionally, we can see that the type of message used on this topic is **geometry_msgs/Twist**.
 </p>

@@ -39,6 +39,21 @@ At the center of the collection of nodes is the ROS Master, which acts as a sort
 Note: The ROS master allows nodes to locate one another but after that they connect with each other directly.
 In addition to allowing nodes to locate one another and communicate, the ROS Master also hosts what has called the parameter server. As its name suggests, the parameter server is typically used to store parameters and configuration values that are shared amongst the running nodes. For example, a mobile robot's wheel radius may be used by one node to estimate position and by another to calculate speed and rather than storing the same information in multiple places, nodes can look up values as needed(See below).
 
-  
+<p align="center">
+<img src="./img/5.png" alt="Nodes and Topics" />
+<p align="center">
+ 
+Nodes can share data with one another by passing messages over what are called topics. A topic is simply a named bus which you can think of as a pipe between nodes through which messages flow. 
+
+In order to send a message on a topic, we say that a node must publish to it. Likewise, to receive a message on a topic, a node must subscribe to it. Below is an example of the topics called publish subscribe or a pub sub architecture (the arrows represent message flow from publishers to subscribers).
+
+
+<p align="center">
+<img src="./img/6.png" alt="Nodes and Topics" />
+<p align="center">
+
+It's important to note that each node may simultaneously publish and subscribe to a wide variety of topics.
+
+# Message Passing Types
 
 </p>

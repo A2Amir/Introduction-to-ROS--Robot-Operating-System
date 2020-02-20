@@ -131,5 +131,41 @@ To install ROS without using VirtualBox , please visit: [ROS documentation](http
 Before we begin using ROS in a terminal, we must first ensure that all of the environment variables are present. To do this, we must source the setup script provided by ROS:
   
     source  /opt/ros/kinetic/setup.bash
+  
+<p align="right">
+<img src="./img/12.png" alt="Source the ROS Environment" width="600" height="200" />
+<p align="right">
+  
+Note: source command executes the bash script within the existing environment.
+
+#### Inspecting the Environment
+
+You can inspect the changes that it has made to our environment variables by running the following commands in a new terminal (where /opt/ros/kinetic/setup.bash has not already been sourced).
+
+<p align="right">
+<img src="./img/13.png" alt="Inspecting the Environment" width="600" height="200" />
+<p align="right">
+  
+More information about the environment variables can be found [here](http://wiki.ros.org/ROS/EnvironmentVariables).
+
+#### Automatically Configuring the Environment
+
+Setting up the ROS environment every time you open a new terminal window can be painful and tedious. To avoid the tedium, we can simply add the command to source the workspace to our ~/.bashrc file. This will cause our environment to be sourced any time a new terminal session is created. Please note that the provided VM already has this configured so there is no need to execute this step!
+
+
+<p align="right">
+<img src="./img/14.png" alt="Automatically Configuring the Environment" width="600" height="200" />
+<p align="right">
+  
+
+
+
+
+
+
+
+
+
+
 
 </p>

@@ -85,7 +85,51 @@ The request message definition might be a custom message type called exposure ti
 <img src="./img/1.gif" alt="Services" width="600" height="200" />
 <p align="right">
   
+# 6. Compute Graph
+
+A moderately complex robot will likely have dozens of nodes even more topics and quite a few services. The diagrams of nodes and topics and how they're all connected and are frequently referred to as compute graphs (see below image). Visualizing the compute graph is very useful for understanding what nodes exist and how they communicate with one another.
+ 
   
+<p align="right">
+<img src="./img/9.png" alt="Compute Graph" width="600" height="400" />
+<p align="right">
   
+Note: ROS provides a tool called rqt_graph for showing the compute graph of a system.  
+
+# 7. Turtlesim Overview
+
+In this section we are going to get some hands-on experience with a helpful little simulator package called TurtleSim.
+Actually, the use of turtles and robotics goes back to the 1940s. Early roboticist William Gray Walter created some of the first autonomous devices, turtle robots which he called Elmer and Elsie and in the 1960s at MIT, Seymour Papert used turtle robots in robotics education.
+
   
+<p align="right">
+<img src="./img/10.png" alt="Turtlesim Overview" width="600" height="400" />
+<p align="right">
+  
+ Seymour's robots could perform a few basic functions. They could move forward or backwards by a given distance, rotate by a given angle or they could drop the retractable pen on their bellies allowing them to draw as they moved.
+ 
+In addition to being involved with the creation and development of MIT’s turtle robots, Dr. Papert is also known as the creator and evangelist for the educational programming language LOGO.
+
+Despite being a general-purpose language, LOGO is known for its use of [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics), a system which allows users to draw by sending simple commands to a robotic turtle. The robotic turtle mentioned here could be either a real turtle robot, or a virtual on-screen cursor within the LOGO programming environment.
+
+  
+<p align="right">
+<img src="./img/11.png" alt="Turtlesim Overview" width="600" height="400" />
+<p align="right">
+ 
+The image above depicts some drawings of three dimensional spheres creating using turtle graphics. The website [turtleart.org](http://turtleart.org/) hosts a gallery containing some even more outstanding examples!
+If you'd like to have some fun with turtle graphics, feel free to try out the [Turtle Graphics 1.01](https://scratch.mit.edu/projects/1250518/) project, which allows you to experiment with turtle graphics through MIT’s graphical programming environment scratch.
+
+# 8. Install ROS
+
+To follow along with the exercises in these lessons, you will need to be running Ubuntu Linux with ROS installed. download the [compressed VM disk image](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Udacity_VM_Base_V1.0.0.zip), uncompress and  open it using [VirtualBox](https://www.virtualbox.org/wiki/Downloads) to run the VM(***The password for the VM is udacity-nd**).
+
+To install ROS without using VirtualBox , please visit: [ROS documentation](http://wiki.ros.org/)
+
+# 9. Source the ROS Environment
+
+Before we begin using ROS in a terminal, we must first ensure that all of the environment variables are present. To do this, we must source the setup script provided by ROS:
+  
+    source  /opt/ros/kinetic/setup.bash
+
 </p>

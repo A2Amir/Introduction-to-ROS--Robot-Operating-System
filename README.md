@@ -56,4 +56,18 @@ It's important to note that each node may simultaneously publish and subscribe t
 
 # 4. Message Passing Types
 
+Each ROS distribution comes with a wide variety of predefined message types which are available for your use. There are message types for communicating physical quantities, such as positions, velocities, accelerations, rotations and durations. There are also messages for communicating sensor readings such as laser scans, images, point clouds, inertial measurements, and more.
+
+The number of message types available in a full ROS install is actually quite staggering and you can to define your own type.
+It's important to note that although the named messages would seem to imply text based contents, they can in fact contain any kind of data. Below is an example of the message types associated with the topics we looked at earlier.
+
+<p align="right">
+<img src="./img/7.png" alt="Message Passing Types" width="600" height="400"/>
+<p align="right">
+  
+In the above case, the topic called camera_images is transporting image messages from the camera node to the position estimator node and so on.
+
+# 5. Services
+
+
 </p>

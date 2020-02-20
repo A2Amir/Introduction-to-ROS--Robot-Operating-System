@@ -78,5 +78,14 @@ Let's take a look at how a service might be used in an example. Let's say that t
 <p align="right">
 <img src="./img/8.png" alt="Services" width="600" height="200" />
 <p align="right">
+
+The request message definition might be a custom message type called exposure time and the response might just be an image message. By issuing a service call to the capture_image service, the behavior executor node is able to request the camera should capture an image with a given exposure time setting (2 milisecond). The camera node will then respond to the request by sending a message containing the resulting image.
+
+<p align="right">
+<img src="./img/1.gif" alt="Services" width="600" height="200" />
+<p align="right">
+  
+  
+  
   
 </p>

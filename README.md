@@ -139,7 +139,7 @@ Note: source command executes the bash script within the existing environment.
 
 #### Inspecting the Environment
 
-You can inspect the changes that it has made to our environment variables by running the following commands in a new terminal (where /opt/ros/kinetic/setup.bash has not already been sourced).
+You can inspect the changes that it has made to our environment variables by running the following commands in a new terminal (where source /opt/ros/kinetic/setup.bash has not already been executed before).
 
 <p align="right">
 <img src="./img/13.png" alt="Inspecting the Environment" width="600" height="200" />
@@ -159,7 +159,7 @@ Setting up the ROS environment every time you open a new terminal window can be 
 
 # 10. Run Turtlesim
 
-Now that we have added ROS’ environment variables to our terminal session, you can run the turtlesim package but before any ROS nodes can be run, the Master process must be started. The Master process is responsible for the following (and more)
+Now that we have added ROS’ environment variables to our terminal session, you can run the turtlesim package but before any ROS nodes can be run, the **Master process** must be started. The Master process is responsible for the following (and more)
 
 * Providing naming and registration services to other running nodes
 * Tracking all publishers and subscribers
@@ -172,7 +172,7 @@ To run the master process, you must execute the command **roscore**. If all goes
 <img src="./img/15.png" alt="Run Turtlesim" width="600" height="400" />
 <p align="right">
 
-This indicates that ROS Master is running. To terminate the ROS Master process, simply type ctrl-c in the roscore terminal window.
+This indicates that ROS Master is running. To terminate the ROS Master process, simply type **ctrl-c** in the roscore terminal window.
 
 # 11. Running Turtlesim Nodes
 

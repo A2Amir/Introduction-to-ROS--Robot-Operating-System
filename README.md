@@ -176,39 +176,41 @@ This indicates that ROS Master is running. To terminate the ROS Master process, 
 
 # 11. Running Turtlesim Nodes
 
-Now that the ROS master is running, we can run our first two ROS nodes. To do so, we will execute the rosrun command in a new terminal window, passing as parameters the name of the package we wish to run, and the name of the actual node. First we will start the turtlesim_node, in the turtlesim package using the following command.
+Now that the ROS master is running, we can run our first two ROS nodes. To do so, we will execute the **rosrun** command in a new terminal window, passing as parameters **the name of the package** we wish to run, and **the name of the actual node**. First we will start the turtlesim_node, in the turtlesim package using the following command.
 
     rosrun turtlesim turtlesim_node
     
-Next, we will start the turtle_teleop_key node, also from the turtlesim package.
+Next, we will start the turtle_teleop_key node from the turtlesim package.
 
     rosrun turtlesim turtle_teleop_key
     
-By using the arrow keys with the turtle_teleop_key node’s console selected, we are able to move the turtle in turtlesim!
+By using the arrow keys with the turtle_teleop_key node’s console selected, we are able to move the turtle in turtlesim(see below)!
 
 
 <p align="right">
 <img src="./img/16.png" alt="Running Turtlesim Nodes" width="600" height="400" />
 <p align="right">
 
-Note: Tab completion is your friend. Each ROS distribution comes with a staggering number of packages, and an even more staggering number of nodes. In the bash shell, a single-tap of the tab key will cause the command on the command-line to be completed, if there is a single match. A double-tap of the tab key will result in a list of all possible matches, in the case that a single match cannot be found.
+Note: Tab completion is your friend. Each ROS distribution comes with a staggering number of packages and an even more staggering number of nodes. In the bash shell, a single-tap of the tab key will cause the command on the command-line to be completed, if there is a single match. A double-tap of the tab key will result in a list of all possible matches, in the case that a single match cannot be found.
 
 # 12. List All Active Nodes
 
-To get a list of all nodes that are active and have been registered with the ROS Master, we can use the command **rosnode list** in a new terminal . Let’s do so now:
+To get a list of all nodes that are active and have been registered with the ROS Master, we can use the command **rosnode list** in a new terminal . Let’s do now:
 
 
 <p align="right">
 <img src="./img/17.png" alt=" List All Active Nodes" width="600" height="200" />
 <p align="right">
 
-We can see that there are three active nodes that have been registered with the ROS Master, /rosout, /teleop_turtle, and /turtlesim.
-* /rosout This node is launched by roscore. It subscribes to the standard /rosout topic, the topic to which all nodes send log messages.
-* /teleop_turtle This is our keyboard teleop node. Notice that it’s not named turtle_teleop_key. There’s no requirement that a node’s broadcasted name is the same as the name of it’s associated executable.
+We can see that there are three active nodes that have been registered with the ROS Master, /rosout, /teleop_turtle and /turtlesim.
 
-* /turtlesim The node name associated with the turtlebot_sim node
+* /rosout: This node is launched by roscore. It subscribes to the standard /rosout topic, the topic to which all nodes send log messages.
+* /teleop_turtle: This is our keyboard teleop node. Notice that it’s not named turtle_teleop_key. There’s no requirement that a node’s broadcasted name is the same as the name of it’s associated executable.
+
+* /turtlesim: The node name associated with the turtlebot_sim node.
 
 # 13. List Topics
+
 In a similar fashion, we are able to query the ROS Master for a list of all topics. To do so, we use the command **rostopic list**.
 
 <p align="right">

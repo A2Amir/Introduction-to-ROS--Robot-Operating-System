@@ -45,7 +45,7 @@ In addition to allowing nodes to locate one another and communicate, the ROS Mas
  
 Nodes can share data with one another by passing messages over what are called **topics**. A topic is simply a named bus which you can think of as a pipe between nodes through which messages flow. 
 
-In order to send a message on a topic, we say that a node must **publish to it**. Likewise, to receive a message on a topic, a node must **subscribe to it**. Below is an example of the topics called **publish subscribe or a pub sub architecture** (the arrows represent message flow from publishers to subscribers).
+**In order to send a message on a topic, we say that a node must publish to it. Likewise, to receive a message on a topic, a node must subscribe to it**. Below is an example of the topics called **publish subscribe or a pub sub architecture** (the arrows represent message flow from publishers to subscribers).
 
 
 <p align="right">
@@ -78,7 +78,7 @@ Let's take a look at how a service might be used in an example. Let's say that t
 <img src="./img/8.png" alt="Services" width="600" height="200" />
 <p align="right">
 
-The request message definition might be a custom message type called exposure time and the response might just be an image message. By issuing a service call to the capture_image service, the behavior executor node is able to request the camera should capture an image with a given exposure time setting (2 milisecond). The camera node will then respond to the request by sending a message containing the resulting image.
+The request message definition might be a custom message type called exposure time(see below) and the response might just be an image message. By issuing a service call to the capture_image service, the behavior executor node is able to request and the camera should capture an image with a given exposure time setting (2 milisecond). The camera node will then respond to the request by sending a message containing the resulting image.
 
 <p align="right">
 <img src="./img/1.gif" alt="Services" width="600" height="200" />
@@ -86,19 +86,18 @@ The request message definition might be a custom message type called exposure ti
   
 # 6. Compute Graph
 
-A moderately complex robot will likely have dozens of nodes even more topics and quite a few services. The diagrams of nodes and topics and how they're all connected and are frequently referred to as compute graphs (see below image). Visualizing the compute graph is very useful for understanding what nodes exist and how they communicate with one another.
+A moderately complex robot will likely have dozens of nodes even more topics and quite a few services. The diagrams of nodes and topics and how they're all connected are frequently referred to as **compute graphs** (see below image). Visualizing the compute graph is very useful for understanding what nodes exist and how they communicate with one another.
  
   
 <p align="right">
 <img src="./img/9.png" alt="Compute Graph" width="600" height="400" />
 <p align="right">
   
-Note: ROS provides a tool called rqt_graph for showing the compute graph of a system.  
+Note: ROS provides a tool called **rqt_graph** for showing the compute graph of a system.  
 
 # 7. Turtlesim Overview
 
-In this section we are going to get some hands-on experience with a helpful little simulator package called TurtleSim.
-Actually, the use of turtles and robotics goes back to the 1940s. Early roboticist William Gray Walter created some of the first autonomous devices, turtle robots which he called Elmer and Elsie and in the 1960s at MIT, Seymour Papert used turtle robots in robotics education.
+In this section we are going to get some hands-on experience with a helpful little simulator package called **TurtleSim**. Actually, the use of turtles and robotics goes back to the 1940s. Early roboticist William Gray Walter created some of the first autonomous devices, turtle robots which he called **Elmer and Elsie** and in the 1960s at MIT, Seymour Papert used turtle robots in robotics education.
 
   
 <p align="right">
@@ -107,9 +106,9 @@ Actually, the use of turtles and robotics goes back to the 1940s. Early robotici
   
  Seymour's robots could perform a few basic functions. They could move forward or backwards by a given distance, rotate by a given angle or they could drop the retractable pen on their bellies allowing them to draw as they moved.
  
-In addition to being involved with the creation and development of MIT’s turtle robots, Dr. Papert is also known as the creator and evangelist for the educational programming language LOGO.
+In addition to being involved with the creation and development of MIT’s turtle robots, Dr. Papert is also known as the creator and evangelist for the educational programming language **LOGO**.
 
-Despite being a general-purpose language, LOGO is known for its use of [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics), a system which allows users to draw by sending simple commands to a robotic turtle. The robotic turtle mentioned here could be either a real turtle robot, or a virtual on-screen cursor within the LOGO programming environment.
+Despite being a general-purpose language, LOGO is known for its use of [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics), a system which allows users to draw by sending simple commands to a robotic turtle. The robotic turtle mentioned here could be either a real turtle robot or a virtual on-screen cursor within the LOGO programming environment.
 
   
 <p align="right">
@@ -117,13 +116,14 @@ Despite being a general-purpose language, LOGO is known for its use of [turtle g
 <p align="right">
  
 The image above depicts some drawings of three dimensional spheres creating using turtle graphics. The website [turtleart.org](http://turtleart.org/) hosts a gallery containing some even more outstanding examples!
+
 If you'd like to have some fun with turtle graphics, feel free to try out the [Turtle Graphics 1.01](https://scratch.mit.edu/projects/1250518/) project, which allows you to experiment with turtle graphics through MIT’s graphical programming environment scratch.
 
 # 8. Install ROS
 
 To follow along with the exercises in these lessons, you will need to be running Ubuntu Linux with ROS installed. download the [compressed VM disk image](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Udacity_VM_Base_V1.0.0.zip), uncompress and  open it using [VirtualBox](https://www.virtualbox.org/wiki/Downloads) to run the VM(**The password for the VM is udacity-nd**).
 
-To install ROS without using VirtualBox , please visit: [ROS documentation](http://wiki.ros.org/)
+To install ROS without using VirtualBox, please visit: [ROS documentation](http://wiki.ros.org/)
 
 # 9. Source the ROS Environment
 

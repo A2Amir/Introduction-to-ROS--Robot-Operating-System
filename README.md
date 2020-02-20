@@ -258,6 +258,6 @@ If we then command the turtle to move from the turtle_teleop_key window, we will
 <img src="./img/21.png" alt=" Echo Messages on a Topic" width="600" height="250" />
 <p align="right">
   
- In the next lesson, we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
+ In [the next lesson](), we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
   
 </p>

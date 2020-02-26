@@ -37,6 +37,7 @@ For example, there may be nodes for each sensor and actuator in the system as we
 At the center of the collection of nodes is the **ROS Master**, which acts as a sort of manager of all the nodes. The ROS Master maintains a registry of all the active nodes on a system and then allows each node to discover other nodes in the system and establish lines of communication with them. 
 
 Note: The ROS master allows nodes to locate one another but after that they connect with each other directly.
+
 In addition to allowing nodes to locate one another and communicate, the ROS Master also hosts what has called **the parameter server**. As its name suggests, the parameter server is typically used to store parameters and configuration values that are shared amongst the running nodes. For example, a mobile robot's wheel radius may be used by one node to estimate position and by another to calculate speed and rather than storing the same information in multiple places, nodes can look up values as needed(See below).
 
 <p align="right">
@@ -58,7 +59,7 @@ It's important to note that each node may simultaneously publish and subscribe t
 
 Each ROS distribution comes with a wide variety of predefined message types which are available for our use. There are message types for communicating physical quantities, such as positions, velocities, accelerations, rotations and durations. There are also messages for communicating sensor readings such as laser scans, images, point clouds, inertial measurements and more.
 
-The number of message types available in a full ROS install is actually quite staggering and you can to define your own type. It's important to note that although the named messages would seem to imply text based contents, they can in fact contain any kind of data. Below is an example of the message types associated with the topics we looked at earlier.
+The number of message types available in a full ROS install is actually quite staggering and we can to define your own type. It's important to note that although the named messages would seem to imply text based contents, they can in fact contain any kind of data. Below is an example of the message types associated with the topics we looked at earlier.
 
 <p align="right">
 <img src="./img/7.png" alt="Message Passing Types" width="600" height="400"/>
@@ -97,7 +98,7 @@ Note: ROS provides a tool called **rqt_graph** for showing the compute graph of 
 
 # 7. Turtlesim Overview
 
-In this section we are going to get some hands-on experience with a helpful little simulator package called **TurtleSim**. Actually, the use of turtles and robotics goes back to the 1940s. Early roboticist William Gray Walter created some of the first autonomous devices, turtle robots which he called **Elmer and Elsie** and in the 1960s at MIT, Seymour Papert used turtle robots in robotics education.
+In this section I am going to get some hands-on experience with a helpful little simulator package called **TurtleSim**. Actually, the use of turtles and robotics goes back to the 1940s. Early roboticist William Gray Walter created some of the first autonomous devices, turtle robots which he called **Elmer and Elsie** and in the 1960s at MIT, Seymour Papert used turtle robots in robotics education.
 
   
 <p align="right">
@@ -127,7 +128,7 @@ To install ROS without using VirtualBox, please visit: [ROS documentation](http:
 
 # 9. Source the ROS Environment
 
-Before we begin using ROS in a terminal, we must first ensure that all of the environment variables are present. To do this, we must source the setup script provided by ROS:
+Before I begin using ROS in a terminal, I must first ensure that all of the environment variables are present. To do this, we must source the setup script provided by ROS:
   
     source  /opt/ros/kinetic/setup.bash
   
@@ -139,7 +140,7 @@ Note: source command executes the bash script within the existing environment.
 
 #### Inspecting the Environment
 
-You can inspect the changes that it has made to our environment variables by running the following commands in a new terminal (where source /opt/ros/kinetic/setup.bash has not already been executed before).
+I can inspect the changes that it has made to our environment variables by running the following commands in a new terminal (where source /opt/ros/kinetic/setup.bash has not already been executed before).
 
 <p align="right">
 <img src="./img/13.png" alt="Inspecting the Environment" width="600" height="200" />
@@ -149,7 +150,7 @@ More information about the environment variables can be found [here](http://wiki
 
 #### Automatically Configuring the Environment
 
-Setting up the ROS environment every time you open a new terminal window can be painful and tedious. To avoid the tedium, we can simply add the command to source the workspace to our ~/.bashrc file. This will cause our environment to be sourced any time a new terminal session is created. Please note that the provided VM already has this configured so there is no need to execute this step!
+Setting up the ROS environment every time I open a new terminal window can be painful and tedious. To avoid the tedium, we can simply add the command to source the workspace to our ~/.bashrc file. This will cause our environment to be sourced any time a new terminal session is created. Please note that the provided VM already has this configured so there is no need to execute this step!
 
 
 <p align="right">
@@ -224,7 +225,7 @@ In a similar fashion, we are able to query the ROS Master for a list of all topi
 
 # 14. Get Information About a Specific Topic
 
-If we wish to get information about a specific topic, who is publishing to it, subscribed to it or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
+If I wish to get information about a specific topic, who is publishing to it, subscribed to it or the type of message associated with it, we can use the command **rostopic info**. Let’s check into the /turtle1/cmd_vel topic:
 
 <p align="right">
 <img src="./img/19.png" alt=" Get Information About a Specific Topic" width="600" height="300" />
@@ -235,13 +236,13 @@ If we wish to get information about a specific topic, who is publishing to it, s
 
 # 15. Show Message Information
 
-Let’s get some more information about the **geometry_msgs/Twist** message on the **/turtle1/cmd_vel** topic, to do so, we will use the **rosmsg info** command.
+Let’s get some more information about the **geometry_msgs/Twist** message on the **/turtle1/cmd_vel** topic, to do so, I will use the **rosmsg info** command.
 
 <p align="right">
 <img src="./img/20.png" alt=" Turtlesim Commands: Show Message Information" width="600" height="300" />
 <p align="right">
 
-We can see that a Twist message consists nothing more than two Vector3 messages. One for linear velocity and another for angular velocities with each velocity component being represented by a float64.
+I can see that a Twist message consists nothing more than two Vector3 messages. One for linear velocity and another for angular velocities with each velocity component being represented by a float64.
 
 Note: Sometimes, the message definition won’t provide an ample amount of detail about a message type. For example, in the example above, how can we be sure that linear and angular vectors above refer to velocities and not positions? One way to get more detail would be to look at the comments in the message’s definition file. To do so, we can issue the following command: **rosed geometry_msgs Twist.msg**
 
@@ -249,7 +250,7 @@ Note 2: More information about rosed, including how to select which editor is us
 
 # 16. Echo Messages on a Topic
 
-Sometimes it may be useful to look at a topic’s published messages in real time. To do so, we can use the command **rostopic echo**. Let’s take a look at the **/turtle1/cmd_vel** topic.
+Sometimes it may be useful to look at a topic’s published messages in real time. To do so, I can use the command **rostopic echo**. Let’s take a look at the **/turtle1/cmd_vel** topic.
 
       rostopic echo /turtle1/cmd_vel
       
@@ -259,6 +260,6 @@ If we then command the turtle to move from the turtle_teleop_key window, we will
 <img src="./img/21.png" alt=" Echo Messages on a Topic" width="600" height="250" />
 <p align="right">
   
-In [the next lesson](https://github.com/A2Amir/Catkin-Workspace-for-ROS), we will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
+In [the next lesson](https://github.com/A2Amir/Catkin-Workspace-for-ROS), I will learn how to build a basic ROS package called simple arm. For real world robotics applications, we will always start by creating a new development workspace and then adding software packages to it, which is exactly what we're going to do in the next lesson.
   
 </p>
